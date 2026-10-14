@@ -1,0 +1,20 @@
+{
+  "name": "deckhand",
+  "version": "0.1.0",
+  "description": "HTML presentations with a progress rail, a presenter window and a speaker script, designed for AI-assisted authoring.",
+  "private": true,
+  "license": "MIT",
+  "author": "ebygd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ebygd/deckhand.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "new": "node tools/new-deck.mjs",
+    "verify": "node tools/verify.mjs",
+    "demo": "node tools/verify.mjs demo && node tools/verify.mjs demo/gallery.html --out demo/.verify-gallery"
+  }
+}

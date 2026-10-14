@@ -1,0 +1,33 @@
+name: Verify demo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify demo and gallery
+        run: npm run demo
+      - name: Scaffold and verify a starter deck
+        run: |
+          npm run new -- "$RUNNER_TEMP/starter" --title "CI starter" --rail well
+          npm run verify -- "$RUNNER_TEMP/starter"
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: |
+            demo/.verify
+            demo/.verify-gallery
+          if-no-files-found: ignore

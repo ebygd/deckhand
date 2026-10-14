@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300">
+  <rect width="640" height="300" fill="#F2EDE3"/>
+  <g fill="none" stroke="#17140F" stroke-width="1.6" stroke-linecap="square">
+    <path d="M260 250 L300 40 M380 250 L340 40"/>
+    <path d="M300 40 H340"/>
+    <path d="M264 230 L376 230 M268 205 L372 205 M273 178 L367 178 M279 148 L361 148 M285 118 L355 118 M291 88 L349 88 M297 60 L343 60"/>
+    <path d="M264 230 L372 205 M376 230 L268 205 M268 205 L367 178 M372 205 L273 178 M273 178 L361 148 M367 178 L279 148 M279 148 L355 118 M361 148 L285 118 M285 118 L349 88 M355 118 L291 88" stroke-width="1" stroke="#4B453B"/>
+    <path d="M200 250 H440" stroke-width="3"/>
+    <path d="M40 270 H600"/>
+  </g>
+  <g stroke="#B9B09F" stroke-width="1">
+    <path d="M40 278 l8 -8 M56 278 l8 -8 M72 278 l8 -8 M88 278 l8 -8 M104 278 l8 -8 M120 278 l8 -8 M520 278 l8 -8 M536 278 l8 -8 M552 278 l8 -8 M568 278 l8 -8 M584 278 l8 -8"/>
+  </g>
+  <rect x="314" y="96" width="12" height="16" fill="#17140F"/>
+  <path d="M320 40 V96" stroke="#4B453B" stroke-width="1"/>
+  <circle cx="320" cy="250" r="6" fill="#FF1243"/>
+  <g font-family="monospace" font-size="11" fill="#8C8476" letter-spacing="1.2">
+    <text x="452" y="246">RIG FLOOR</text>
+    <text x="352" y="36">CROWN</text>
+  </g>
+</svg>

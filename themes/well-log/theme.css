@@ -1,0 +1,66 @@
+/* Deckhand theme: well-log. Load after engine/deckhand.css. */
+
+@font-face {
+  font-family: "Besley";
+  src: url("fonts/Besley-Variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Besley";
+  src: url("fonts/Besley-Italic-Variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("fonts/SchibstedGrotesk-Variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("fonts/SchibstedGrotesk-Italic-Variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("fonts/MartianMono-Variable.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --bg: #f2ede3;
+  --bg-2: #e9e2d4;
+  --bg-3: #ded5c3;
+  --card: #f8f4ec;
+  --ink: #17140f;
+  --ink-2: #4b453b;
+  --ink-3: #8c8476;
+  --ink-4: #b9b09f;
+  --rule: rgba(23, 20, 15, 0.14);
+  --rule-2: rgba(23, 20, 15, 0.07);
+  --accent: #ff1243;
+  --accent-ink: #c70a36;
+  --accent-wash: rgba(255, 18, 67, 0.1);
+  --accent-2: #007079;
+  --accent-2-wash: rgba(0, 112, 121, 0.1);
+  --on-accent: #ffffff;
+  --font-display: "Besley", "Rockwell", Georgia, serif;
+  --font-body: "Schibsted Grotesk", "Segoe UI", sans-serif;
+  --font-mono: "Martian Mono", "Cascadia Mono", Consolas, monospace;
+  --title-weight: 500;
+  --display-weight: 600;
+  --grain: 0.22;
+}

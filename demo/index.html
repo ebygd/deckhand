@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deckhand demo</title>
+<link rel="stylesheet" href="../engine/deckhand.css">
+<link rel="stylesheet" href="../themes/well-log/theme.css">
+</head>
+<body>
+<main class="deck" data-rail="well" data-rail-unit="m" data-rail-max="500" data-rail-ticks="100" data-rail-caption="Demo well · 1 slide = 100 m" data-watermark="pos" data-overview-title="$ git log --reverse --oneline">
+
+<section class="slide" data-label="Deckhand" data-meta="RIG UP" data-time="30">
+  <div class="title-layout">
+    <div class="title-main">
+      <p class="kicker is-command rise" style="--i:0">$ npm run new -- ../my-talk</p>
+      <h1 class="display rise" style="--i:1">Deck<em>hand</em></h1>
+      <p class="lede rise" style="--i:2">HTML presentations with a progress rail, a presenter window, and instructions an AI can follow.</p>
+      <p class="byline rise" style="--i:3"><span>Demo deck</span><span>Theme: well-log</span><span>Rail: well</span></p>
+    </div>
+    <figure class="logtrack rise" style="--i:3" data-title="GR · SAMPLE" data-tag="TRACK 1" data-unit="events / day" data-scale="sqrt" data-label-prefix="D" data-label-every="10" data-shade="0-2" data-shade-label="setup" data-footnote="sample data · .logtrack data-series" data-series="4,6,8,32,12,0,0,14,14,13,11,10,0,0,5,7,9,11,13,0,0,36,13,12,10,9,0,0,6,8,32,12,13,0,0,14,13,11,10,37,0,0,15,17,19,21,22,0,0,21,20"></figure>
+  </div>
+  <aside class="notes">
+    <p>Deckhand is a small engine for HTML presentations. Each deck is one HTML file that works offline, with a presenter window and a progress rail.</p>
+    <p class="opt">The chart on the right is the logtrack component, drawing sample data from one attribute.</p>
+  </aside>
+</section>
+
+<section class="slide" data-label="One file per deck" data-meta="WELL PLAN" data-time="45">
+  <p class="kicker rise" style="--i:0">What you get</p>
+  <h1 class="rise" style="--i:1">Each deck is one HTML file,<br>with <em>no build step</em>.</h1>
+  <div class="grid-2 gap-m">
+    <ol class="numbered rise" style="--i:2">
+      <li><span><b>Fixed 1920×1080 stage</b> that scales to any screen.</span></li>
+      <li><span><b>Presenter window</b> with notes and a timer, synced both ways.</span></li>
+      <li><span><b>Reveals and state changes</b> step by step.</span></li>
+      <li><span><b>Themes and rails</b> you can swap per deck.</span></li>
+    </ol>
+    <figure class="quote-card rise" style="--i:3">
+      <figcaption><span>index.html</span><span>a whole slide</span></figcaption>
+      <blockquote>&lt;section class="slide" data-pos="100"&gt; &lt;h1&gt;A plain title&lt;/h1&gt; &lt;aside class="notes"&gt;What to say.&lt;/aside&gt; &lt;/section&gt;</blockquote>
+    </figure>
+  </div>
+  <aside class="notes">
+    <p>Everything is plain HTML, CSS and JavaScript. Open the file in a browser and present. Nothing to install for the audience or the presenter.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="100" data-label="Slide anatomy" data-ref="data-*" data-time="60">
+  <p class="kicker rise" style="--i:0">Authoring</p>
+  <h1 class="rise" style="--i:1">Slides are sections with<br>a few <em>attributes</em>.</h1>
+  <div class="grid-2 gap-m">
+    <figure class="tree rise" style="--i:2">
+      <figcaption>Deck structure</figcaption>
+<pre>main.deck   data-rail="well"
+├── section.slide   data-pos="100"
+│   ├── h1          the title
+│   ├── <mark>[data-step]</mark> revealed in order
+│   └── aside.notes  speaker notes
+└── section.slide   …</pre>
+    </figure>
+    <div class="card is-strong" data-step="1">
+      <h3>Attributes that matter</h3>
+      <p><code>data-pos</code> places the slide on the rail. <code>data-label</code> names it in the rail and run sheet. <code>data-time</code> sets the target seconds. <code>data-step</code> reveals, <code>data-when</code> toggles a state.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>A deck is a main element with sections. The engine adds the stage, rail, overlays and presenter view around them.</p>
+    <p><span class="cue" data-cue="1"></span>These are the attributes you use most.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="200" data-label="Evidence" data-ref="a1b2c3d" data-time="60">
+  <p class="kicker rise" style="--i:0">Components · example data</p>
+  <h1 class="rise" style="--i:1">Components that show<br><em>evidence</em>, not decoration.</h1>
+  <div class="grid-main-side gap-m">
+    <div class="stack">
+      <p class="lede rise" style="--i:2">Commit cards, diffstats, timelines and number strips. Fill them with real data from the project you're presenting.</p>
+      <dl class="stats gap-m rise" style="--i:3">
+        <div><dt>12</dt><dd>components</dd></div>
+        <div><dt>3</dt><dd>rails</dd></div>
+        <div><dt>0</dt><dd>build steps</dd></div>
+      </dl>
+    </div>
+    <article class="commit rise" style="--i:4">
+      <header><span class="ref">a1b2c3d</span><time>example</time></header>
+      <h3>Add presenter view</h3>
+      <p class="diffstat"><span>6 files</span><span class="plus">+412</span><span class="minus">−38</span></p>
+      <div class="diffbar" data-plus="412" data-minus="38"></div>
+      <ul class="files">
+        <li><span>deckhand.js</span><b>+260</b></li>
+        <li><span>deckhand.css</span><b>+140</b></li>
+        <li class="more"><span>… and 4 more files</span></li>
+      </ul>
+    </article>
+  </div>
+  <aside class="notes">
+    <p>The numbers on this slide are example data. In a real deck, every number should come from a source you can name.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="300" data-label="Reveals" data-time="60">
+  <p class="kicker rise" style="--i:0">data-step and data-when</p>
+  <h1 class="rise" style="--i:1">Reveal one idea<br>at a <em>time</em>.</h1>
+  <div class="stack gap-m">
+    <div class="flow u-dim rise" style="--i:2" data-when="1"><span class="flow-label">Before</span><ol><li>Idea</li><li>Slides</li><li>Review</li><li>Rework</li><li>Present</li></ol></div>
+    <div class="flow is-accent" data-step="1"><span class="flow-label">After</span><ol><li>Idea</li><li class="is-hot">AI + deckhand</li><li>Present</li></ol></div>
+  </div>
+  <ul class="options gap-m" data-when="2">
+    <li class="rise" style="--i:3"><div class="mini-bars"><i class="is-accent" style="--x:4;--w:40;--y:0"></i><i style="--x:48;--w:30;--y:1"></i><i class="is-muted" style="--x:12;--w:52;--y:2"></i></div><h4>Option A</h4><p>tried</p></li>
+    <li class="rise" style="--i:4"><div class="mini-bars"><i class="is-accent-2" style="--x:0;--w:30;--y:0"></i><i style="--x:34;--w:44;--y:1"></i><i class="is-muted" style="--x:8;--w:24;--y:2"></i></div><h4>Option B</h4><p>tried</p></li>
+    <li class="is-kept rise" style="--i:5"><div class="mini-bars"><i style="--x:6;--w:36;--y:0"></i><i class="is-accent-2" style="--x:44;--w:40;--y:1"></i><i class="is-muted" style="--x:20;--w:60;--y:2"></i></div><h4>Option C</h4><p>kept</p></li>
+  </ul>
+  <div class="verdict gap-s" data-step="2"><span class="stamp">Decided · <code>data-when="2"</code></span><p>Rejected options get struck out.</p></div>
+  <aside class="notes">
+    <p>Elements with data-step appear in order. Elements with data-when stay visible but change state, like dimming or striking out.</p>
+    <p><span class="cue" data-cue="1"></span>The new flow appears and the old one dims.</p>
+    <p><span class="cue" data-cue="2"></span>Two options are struck out and the kept one stays.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="400" data-label="Wireframes" data-time="45">
+  <p class="kicker rise" style="--i:0">.versions and .wf</p>
+  <h1 class="rise" style="--i:1">Wireframes show how<br>a design <em>changed</em>.</h1>
+  <ol class="versions gap-m">
+    <li class="rise" style="--i:2">
+      <div class="wf" aria-hidden="true"><div class="wf-backdrop"></div><div class="wf-modal"><i class="wf-bar"></i><i class="wf-field"></i><i class="wf-field"></i><i class="wf-field is-short"></i><i class="wf-btn"></i></div></div>
+      <h4><span>v1</span>Dialog</h4><p>first try</p>
+    </li>
+    <li class="rise" style="--i:3">
+      <div class="wf" aria-hidden="true"><div class="wf-table"><i class="wf-row is-head"></i><i class="wf-row"></i><div class="wf-row is-edit"><i class="wf-field"></i><i class="wf-field"></i><i class="wf-btn"></i></div><i class="wf-row"></i></div></div>
+      <h4><span>v2</span>Inline row</h4><p>after feedback</p>
+    </li>
+    <li class="is-picked" data-step="1">
+      <div class="wf" aria-hidden="true"><div class="wf-steps"><div class="wf-stepper"><b class="is-done">✓</b><i></i><b class="is-now">2</b><i></i><b>3</b></div><div class="wf-panel"><i class="wf-bar"></i><i class="wf-field"></i><i class="wf-field is-short"></i><div class="wf-actions"><i class="wf-btn is-ghost"></i><i class="wf-btn"></i></div></div></div></div>
+      <h4><span>v3</span>Guided steps</h4><p>tested with users</p>
+    </li>
+  </ol>
+  <p class="pull gap-m" data-step="1">Low-fidelity drawings keep the focus on the change, not the pixels.</p>
+  <aside class="notes">
+    <p>Wireframe primitives are plain divs. They work well for showing how a screen evolved.</p>
+    <p><span class="cue" data-cue="1"></span>The version that was picked gets the accent shadow.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="500" data-label="Presenter window" data-meta="TD · 500 m" data-time="60">
+  <p class="kicker rise" style="--i:0">Press P</p>
+  <h1 class="rise" style="--i:1">The presenter window<br>keeps you on <em>time</em>.</h1>
+  <div class="grid-main-side gap-m">
+    <ol class="checklist rise" style="--i:2">
+      <li>Notes, with a marker for each reveal</li>
+      <li>Timer, pace and target per slide</li>
+      <li>Next slide and a clickable run sheet</li>
+      <li>Blank screen while you switch to a demo</li>
+    </ol>
+    <div class="wf rise" style="--i:3; height:260px" aria-hidden="true"><div class="wf-table"><i class="wf-row is-head" style="height:22px"></i><i class="wf-row"></i><i class="wf-row"></i><i class="wf-row"></i><div class="wf-row is-edit"><i class="wf-field"></i><i class="wf-btn"></i></div><i class="wf-row"></i></div></div>
+  </div>
+  <aside class="notes">
+    <p>Press P to open the presenter window on your own screen. It stays in sync with the audience window, and either one can drive.</p>
+  </aside>
+</section>
+
+<section class="slide" data-label="Working with AI" data-meta="COMPLETION" data-time="60">
+  <p class="kicker rise" style="--i:0">AGENTS.md · skills/ · docs/</p>
+  <h1 class="rise" style="--i:1">An AI assistant can build<br>the deck <em>with you</em>.</h1>
+  <div class="flow is-accent gap-m rise" style="--i:2"><span class="flow-label">Steps</span><ol><li>Interview</li><li>Facts</li><li>Outline</li><li class="is-hot">Slides</li><li>Script</li><li>Verify</li></ol></div>
+  <div class="columns gap-l">
+    <article class="rise" style="--i:3"><h3>AGENTS.md</h3><p>Rules for any AI working in the repo.</p></article>
+    <article class="rise" style="--i:4"><h3>The skill</h3><p>The full workflow, from interview to verified deck.</p></article>
+    <article class="rise" style="--i:5"><h3>docs/</h3><p>Components, slide patterns, writing and visuals.</p></article>
+  </div>
+  <aside class="notes">
+    <p>The repo ships instructions written for AI assistants: a workflow, a component catalogue, slide patterns, a writing guide and a visuals guide.</p>
+  </aside>
+</section>
+
+<section class="slide" data-label="Get started" data-meta="PRODUCTION" data-time="30">
+  <p class="kicker rise" style="--i:0">Next steps</p>
+  <h1 class="rise" style="--i:1">Start a deck in<br>one <em>command</em>.</h1>
+  <div class="grid-2 gap-m">
+    <figure class="quote-card rise" style="--i:2">
+      <figcaption><span>terminal</span><span>Node 22+</span></figcaption>
+      <blockquote>npm run new -- ../my-talk --title "My talk" --rail timeline</blockquote>
+    </figure>
+    <ol class="numbered rise" style="--i:3">
+      <li><span>Edit <b>index.html</b>, or ask your AI to.</span></li>
+      <li><span>Run <b>npm run verify -- ../my-talk</b>.</span></li>
+      <li><span>Open the deck, press <b>F</b>, then <b>P</b>.</span></li>
+    </ol>
+  </div>
+  <aside class="notes">
+    <p>Scaffold a deck, write the slides, verify them, and present.</p>
+  </aside>
+</section>
+
+</main>
+<script src="../engine/deckhand.js"></script>
+</body>
+</html>

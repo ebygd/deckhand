@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deckhand component gallery</title>
+<link rel="stylesheet" href="../engine/deckhand.css">
+<link rel="stylesheet" href="../themes/well-log/theme.css">
+<style>
+  .segmented[data-value="soft"] .gallery-sample { border-radius: 12px; }
+  .segmented[data-value="sharp"] .gallery-sample { border-radius: 0; }
+  .segmented[data-value="pill"] .gallery-sample { border-radius: 999px; }
+  .gallery-sample { padding: 12px 22px; border: 0; background: var(--accent-2); color: var(--on-accent); font: 600 17px var(--font-body); transition: border-radius .35s var(--ease); }
+</style>
+</head>
+<body>
+<main class="deck" data-rail="none" data-overview-title="Component gallery">
+
+<section class="slide" data-label="Typography" data-time="20">
+  <p class="kicker">.kicker · h1 · em · .lede · .pull · .eyebrow · .strike</p>
+  <h1>A plain title with one<br><em>emphasised</em> phrase.</h1>
+  <p class="lede">The lede supports the title in one or two sentences. Keep it under about 30 words.</p>
+  <p class="mono-line"><span class="ref">3f8a21c</span> Name of the thing: <s class="strike" data-when="1">MVP<ins>prototype</ins></s></p>
+  <p class="eyebrow gap-l">Eyebrow label</p>
+  <p class="pull">A pull line restates the point in plain words.</p>
+  <aside class="notes"><p>Typography primitives. <span class="cue" data-cue="1"></span>The strike draws on its data-when step.</p></aside>
+</section>
+
+<section class="slide" data-label="Lists" data-time="20">
+  <p class="kicker">.numbered · .checklist</p>
+  <h1>Numbered points and<br>a <em>checklist</em>.</h1>
+  <div class="grid-2 gap-m">
+    <ol class="numbered">
+      <li><span><b>Show</b> users features instead of describing them.</span></li>
+      <li><span><b>Watch</b> users use it.</span></li>
+      <li><span><b>Convince</b> the people who decide.</span></li>
+    </ol>
+    <ol class="checklist">
+      <li>Open the deck</li>
+      <li>Press F for fullscreen</li>
+      <li>Press P for the presenter window</li>
+    </ol>
+  </div>
+  <aside class="notes"><p>Wrap numbered items in a span when they contain bold text.</p></aside>
+</section>
+
+<section class="slide" data-label="Compare and cards" data-time="20">
+  <p class="kicker">.compare · .is-picked · .card · .is-strong · .is-accent</p>
+  <h1>Definitions side by side,<br>and <em>cards</em>.</h1>
+  <div class="grid-2 gap-m">
+    <dl class="compare">
+      <div><dt>Option one</dt><dd>What it is, in one sentence.</dd></div>
+      <div class="is-picked"><dt>Option two</dt><dd>The one we chose, in one sentence.</dd></div>
+    </dl>
+    <div class="stack">
+      <div class="card"><h3>.card</h3><p>Neutral container for a short statement.</p></div>
+      <div class="card is-strong"><h3>.card.is-strong</h3><p>Ink border and a hard shadow.</p></div>
+      <div class="card is-accent"><h3>.card.is-accent</h3><p>Accent shadow for the one that matters.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Use compare for two or three definitions. Mark the chosen one with is-picked.</p></aside>
+</section>
+
+<section class="slide" data-label="Quotes and timeline" data-time="20">
+  <p class="kicker">.quote-card · .is-light · .timeline · .is-key</p>
+  <h1>Quotes, prompts<br>and a <em>timeline</em>.</h1>
+  <div class="grid-main-side gap-m">
+    <div class="stack">
+      <figure class="quote-card"><figcaption><span>Prompt</span><span>07:54</span></figcaption><blockquote>Quote someone, or show the exact prompt that started something.</blockquote></figure>
+      <figure class="quote-card is-light"><figcaption><span>Light variant</span><span>08:38</span></figcaption><blockquote>Use the light card for the second, related quote.</blockquote></figure>
+    </div>
+    <ol class="timeline">
+      <li><time>07:54</time><span>Something happened</span></li>
+      <li><time>08:36</time><span>Then this</span></li>
+      <li class="is-key"><time>Day 2</time><span>The key moment</span></li>
+    </ol>
+  </div>
+  <aside class="notes"><p>Timeline items with is-key, or with data-step, get an accent dot.</p></aside>
+</section>
+
+<section class="slide" data-label="Numbers" data-time="20">
+  <p class="kicker">.bigstat · .stats · .urlbar</p>
+  <h1>Big numbers and<br>a stats <em>strip</em>.</h1>
+  <div class="grid-main-side gap-m align-center">
+    <p class="urlbar"><i></i><i></i><i></i><code>…/reports/q3<b>?preview=charts</b></code></p>
+    <div class="bigstat"><b>3</b><span>days from sketch<br>to a working URL</span></div>
+  </div>
+  <dl class="stats push-bottom">
+    <div><dt>6</dt><dd>weeks</dd></div>
+    <div><dt>48</dt><dd>fixes</dd></div>
+    <div><dt>4</dt><dd>options tried</dd></div>
+    <div><dt>3</dt><dd>variants</dd></div>
+  </dl>
+  <aside class="notes"><p>The stats strip takes three to five items. Each number needs a source.</p></aside>
+</section>
+
+<section class="slide" data-label="Commit and feed" data-time="20">
+  <p class="kicker">.commit · .diffstat · .diffbar · .files · .feed</p>
+  <h1>Commits and a<br>dated <em>feed</em>.</h1>
+  <div class="grid-2 gap-m">
+    <article class="commit">
+      <header><span class="ref">7c4d9e2</span><time>12.03.2026</time></header>
+      <h3>Describe the change in plain words</h3>
+      <p class="diffstat"><span>24 files changed</span><span class="plus">+3 412</span><span class="minus">−180</span></p>
+      <div class="diffbar" data-plus="3412" data-minus="180"></div>
+      <ul class="files"><li><span>Checkout.tsx</span><b>+610</b></li><li><span>Basket.tsx</span><b>+422</b></li><li class="more"><span>… and 22 more files</span></li></ul>
+    </article>
+    <div class="feed">
+      <header><span>What’s new</span><span>changelog</span></header>
+      <article><time>09.10</time><p>A short, user-facing description of a change.</p></article>
+      <article><time>07.10</time><p>Another change, written for users rather than developers.</p></article>
+      <article><time>06.10</time><p>Keep each entry to one or two lines.</p></article>
+    </div>
+  </div>
+  <aside class="notes"><p>The diffbar is built from data-plus and data-minus.</p></aside>
+</section>
+
+<section class="slide" data-label="Flow and cycle" data-time="20">
+  <p class="kicker">.flow · .is-hot · .u-dim · .cycle</p>
+  <h1>Flows and a <em>cycle</em>.</h1>
+  <div class="grid-main-side gap-m align-center" style="grid-template-columns: minmax(0,1fr) 480px">
+    <div class="stack">
+      <div class="flow u-dim" data-when="1"><span class="flow-label">Before</span><ol><li>Stakeholders</li><li>Designer</li><li>Developer</li><li>App</li></ol></div>
+      <div class="flow is-accent" data-step="1"><span class="flow-label">Now</span><ol><li>Stakeholders</li><li class="is-hot">Designer + AI</li><li>App</li></ol></div>
+    </div>
+    <figure class="cycle" style="--size:480px" data-nodes="Demo, Feedback, Prompt, Ship" data-center="48" data-center-label="fixes in 6 weeks"></figure>
+  </div>
+  <aside class="notes"><p>The cycle is built from data-nodes, with three to six nodes. <span class="cue" data-cue="1"></span>The before flow dims when the new one appears.</p></aside>
+</section>
+
+<section class="slide" data-label="Options and stamps" data-time="20">
+  <p class="kicker">.options · .is-kept · .mini-bars · .stamps · .stamp · .verdict</p>
+  <h1>Options, verdicts<br>and <em>stamps</em>.</h1>
+  <ul class="options gap-m" data-when="1">
+    <li><div class="mini-bars"><i class="is-accent" style="--x:4;--w:40;--y:0"></i><i style="--x:48;--w:30;--y:1"></i><i class="is-muted" style="--x:24;--w:52;--y:2"></i></div><h4>Library A</h4><p>commercial</p></li>
+    <li><div class="mini-bars"><i class="is-accent-2" style="--x:0;--w:28;--y:0"></i><i style="--x:18;--w:36;--y:1"></i><i class="is-muted" style="--x:34;--w:56;--y:2"></i></div><h4>Library B</h4><p>open source</p></li>
+    <li class="is-kept"><div class="mini-bars"><i style="--x:8;--w:34;--y:0"></i><i class="is-accent-2" style="--x:46;--w:42;--y:1"></i><i class="is-muted" style="--x:2;--w:60;--y:2"></i></div><h4>Our own</h4><p>kept</p></li>
+  </ul>
+  <div class="verdict gap-s" data-step="1"><span class="stamp">Removed · −1 240 lines</span><p>Kept: the one we already had.</p></div>
+  <div class="stamps gap-m" data-step="2">
+    <div class="v" style="--i:0;--r:-3deg"><span class="stamp is-accent-2">Needed</span><p>Must have</p></div>
+    <div class="v" style="--i:1;--r:2deg"><span class="stamp is-ink">Redundant</span><p>Overlaps</p></div>
+    <div class="v" style="--i:2;--r:-1.5deg"><span class="stamp is-accent">Prioritise</span><p>Goes first</p></div>
+    <div class="v" style="--i:3;--r:2.5deg"><span class="stamp is-ghost">Unnecessary</span><p>Can drop</p></div>
+  </div>
+  <aside class="notes"><p><span class="cue" data-cue="1"></span>Options without is-kept get struck out. <span class="cue" data-cue="2"></span>Stamps slam in one after another.</p></aside>
+</section>
+
+<section class="slide" data-label="Before and after" data-time="20">
+  <p class="kicker">.tree · mark · .is-strong · data-when</p>
+  <h1>Before and after<br>a <em>structural</em> change.</h1>
+  <div class="grid-2 gap-m">
+    <figure class="tree" data-when="1">
+      <figcaption>Before</figcaption>
+<pre>Order
+├── Line item
+│   └── Product
+│       └── <mark>Discount</mark>
+└── Customer</pre>
+      <p>Discount fixed per product</p>
+    </figure>
+    <figure class="tree is-strong" data-step="1">
+      <figcaption>After</figcaption>
+<pre>Order
+├── Line item
+│   └── Product
+└── Customer
+    └── Agreement
+        └── <mark>Discount</mark></pre>
+      <p>Discount set per customer agreement</p>
+    </figure>
+  </div>
+  <aside class="notes"><p><span class="cue" data-cue="1"></span>The marked node is struck in the before tree and appears in the after tree.</p></aside>
+</section>
+
+<section class="slide" data-label="Wireframes" data-time="20">
+  <p class="kicker">.versions · .is-picked · .wf · .wf-modal · .wf-table · .wf-steps</p>
+  <h1>Wireframes for UI<br><em>iterations</em>.</h1>
+  <ol class="versions gap-m">
+    <li><div class="wf" aria-hidden="true"><div class="wf-backdrop"></div><div class="wf-modal"><i class="wf-bar"></i><i class="wf-field"></i><i class="wf-field is-short"></i><i class="wf-btn"></i></div></div><h4><span>v1</span>Dialog</h4><p>.wf-modal</p></li>
+    <li><div class="wf" aria-hidden="true"><div class="wf-backdrop"></div><div class="wf-modal"><i class="wf-bar"></i><div class="wf-rows"><i></i><i></i><i></i></div><i class="wf-btn"></i></div></div><h4><span>v2</span>Table in dialog</h4><p>.wf-rows</p></li>
+    <li><div class="wf" aria-hidden="true"><div class="wf-table"><i class="wf-row is-head"></i><i class="wf-row"></i><div class="wf-row is-edit"><i class="wf-field"></i><i class="wf-btn"></i></div><i class="wf-row"></i></div></div><h4><span>v3</span>Inline row</h4><p>.wf-table</p></li>
+    <li class="is-picked"><div class="wf" aria-hidden="true"><div class="wf-steps"><div class="wf-stepper"><b class="is-done">✓</b><i></i><b class="is-now">2</b><i></i><b>3</b></div><div class="wf-panel"><i class="wf-bar"></i><i class="wf-field"></i><div class="wf-actions"><i class="wf-btn is-ghost"></i><i class="wf-btn"></i></div></div></div></div><h4><span>v4</span>Guided steps</h4><p>.wf-steps</p></li>
+  </ol>
+  <aside class="notes"><p>Wireframe primitives: wf-bar, wf-field, wf-btn, wf-rows, wf-row, wf-stepper and wf-panel.</p></aside>
+</section>
+
+<section class="slide" data-label="Points and columns" data-time="20">
+  <p class="kicker">.points · .columns</p>
+  <h1>Summary rows and<br>short <em>columns</em>.</h1>
+  <ol class="points gap-m">
+    <li><span class="n">01</span><b>Faster first feedback</b><span class="d">From sketches to a clickable app</span><code>week 1 → 2</code></li>
+    <li><span class="n">02</span><b>A short feedback loop</b><span class="d">Feedback implemented before the next demo</span><code>48 fixes</code></li>
+  </ol>
+  <div class="columns gap-l">
+    <article><h3>It looks finished</h3><p>Say <b>prototype</b> early.</p></article>
+    <article><h3>Code is disposable</h3><p>Keep the <b>learning</b>.</p></article>
+    <article><h3>AI follows direction</h3><p>People set <b>direction</b>.</p></article>
+  </div>
+  <aside class="notes"><p>Points take a number, a short title, a description and an evidence chip.</p></aside>
+</section>
+
+<section class="slide" data-label="Toggle and figure" data-time="20">
+  <p class="kicker">.segmented · .figure</p>
+  <h1>An interactive toggle<br>and an <em>image</em>.</h1>
+  <div class="grid-2 gap-m">
+    <div class="segmented">
+      <div class="segmented-control"><button data-value="soft" aria-pressed="true">Soft</button><button data-value="sharp">Sharp</button><button data-value="pill">Pill</button></div>
+      <div class="segmented-preview"><button class="gallery-sample" type="button" tabindex="-1">Save changes</button></div>
+      <p>Clicking sets <code>data-value</code> on <code>.segmented</code>. Style the variants in deck CSS.</p>
+    </div>
+    <figure class="figure is-strong">
+      <img src="assets/sample-rig.svg" alt="Line drawing of a drilling rig on paper">
+      <figcaption>.figure · assets/sample-rig.svg</figcaption>
+    </figure>
+  </div>
+  <aside class="notes"><p>The segmented toggle is for live comparisons. Figures hold screenshots or generated images.</p></aside>
+</section>
+
+<section class="slide" data-label="Title and logtrack" data-time="20">
+  <div class="title-layout">
+    <div class="title-main">
+      <p class="kicker">.title-layout · h1.display · .byline · .logtrack</p>
+      <h1 class="display">Title <em>slide</em></h1>
+      <p class="lede">A display title, a lede, a byline, and a chart in the side column.</p>
+      <p class="byline"><span>Presenter</span><span>Event</span><span>Date</span></p>
+    </div>
+    <figure class="logtrack" data-title="GR · SAMPLE" data-tag="TRACK 1" data-unit="events / day" data-scale="linear" data-label-prefix="W" data-label-every="4" data-series="2,5,3,8,13,9,6,11,15,12,7,10,14,18,16,9,5"></figure>
+  </div>
+  <aside class="notes"><p>The logtrack draws a vertical chart from data-series, with an optional shaded range.</p></aside>
+</section>
+
+</main>
+<script src="../engine/deckhand.js"></script>
+</body>
+</html>

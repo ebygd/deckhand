@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="engine/deckhand.css">
+<link rel="stylesheet" href="theme/theme.css">
+</head>
+<body>
+<main class="deck" data-rail="{{RAIL}}" data-rail-unit="" data-rail-caption="{{TITLE}}">
+
+<section class="slide" data-phase="intro" data-label="Title" data-time="30">
+  <div class="title-layout no-side">
+    <div class="title-main">
+      <p class="kicker rise" style="--i:0">Talk · audience · date</p>
+      <h1 class="display rise" style="--i:1">{{TITLE}}</h1>
+      <p class="lede rise" style="--i:2">One sentence on what this talk covers and why it matters to this audience.</p>
+      <p class="byline rise" style="--i:3"><span>Presenter name</span><span>Event</span><span>Month year</span></p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Open with who you are and what the audience will get from the next few minutes.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="1" data-meta="PART 1" data-label="First point" data-time="60">
+  <p class="kicker rise" style="--i:0">Part 1 · context</p>
+  <h1 class="rise" style="--i:1">State the first point<br>in plain <em>words</em>.</h1>
+  <p class="lede rise" style="--i:2">A short supporting sentence. Keep each slide to one idea.</p>
+  <ol class="numbered gap-m" data-step="1">
+    <li><span><b>Evidence</b> that supports the point.</span></li>
+    <li><span><b>An example</b> the audience recognises.</span></li>
+    <li><span><b>What it means</b> for them.</span></li>
+  </ol>
+  <aside class="notes">
+    <p>Say the point first, then back it up.</p>
+    <p><span class="cue" data-cue="1"></span>Walk through the three items in order.</p>
+  </aside>
+</section>
+
+<section class="slide" data-pos="2" data-meta="PART 2" data-label="A key number" data-time="60">
+  <p class="kicker rise" style="--i:0">Part 2 · evidence</p>
+  <h1 class="rise" style="--i:1">One number that<br>shows the <em>change</em>.</h1>
+  <div class="grid-main-side gap-m">
+    <p class="lede rise" style="--i:2">Explain where the number comes from and why it matters. Use real data and name the source.</p>
+    <div class="bigstat rise" style="--i:3"><b>42</b><span>units of<br>something real</span></div>
+  </div>
+  <aside class="notes">
+    <p>Explain the number, its source, and what it changed.</p>
+  </aside>
+</section>
+
+<section class="slide" data-phase="outro" data-label="Next steps" data-time="30">
+  <p class="kicker rise" style="--i:0">Next steps</p>
+  <h1 class="rise" style="--i:1">What happens <em>next</em>.</h1>
+  <ol class="numbered gap-m rise" style="--i:2">
+    <li><span>A concrete next step.</span></li>
+    <li><span>Who to contact, or where to read more.</span></li>
+  </ol>
+  <p class="pull push-bottom rise" style="--i:3">Thanks. Questions?</p>
+  <aside class="notes">
+    <p>Summarise in one sentence, then open for questions.</p>
+  </aside>
+</section>
+
+</main>
+<script src="engine/deckhand.js"></script>
+</body>
+</html>
